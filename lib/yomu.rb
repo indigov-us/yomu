@@ -235,7 +235,7 @@ class Yomu
 
     @@server_port = custom_port || DEFAULT_SERVER_PORT
     
-    @@server_pid = Process.spawn("#{java} -Djava.awt.headless=true -jar #{Yomu::JARPATH} --server --port #{@@server_port} #{switch}")
+    @@server_pid = Process.spawn("#{java} -Djava.awt.headless=true -jar #{Yomu::JARPATH} --config=#{Yomu::CONFIGPATH} --server --port #{@@server_port} #{switch}")
     sleep(2) # Give the server 2 seconds to spin up.
     @@server_pid
   end
